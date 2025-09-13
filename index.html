@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker Pro</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="input-container">
+        <div class="header">
+          <h1>💰 Budget Tracker Pro</h1>
+        </div>
+
+        
+        <div id="balance">Balance: </div>
+
+        <form id="transactionForm">
+          <input
+            type="text"
+            id="description"
+            placeholder="Transaction Description"
+            required
+          />
+
+          <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            step="0.01"
+            required
+          />
+
+          <select id="type" required>
+            <option value="income">💸 Income</option>
+            <option value="expense">💳 Expense</option>
+          </select>
+
+          <select id="currency" required>
+            <option value="USD" data-symbol="$">$ USD</option>
+            <option value="EUR" data-symbol="€">€ EUR</option>
+            <option value="GBP" data-symbol="£">£ GBP</option>
+            <option value="INR" data-symbol="₹">₹ INR</option>
+          </select>
+
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <div class="transactions-container">
+        <h2>Transactions</h2>
+
+        <div id="transactionList">
+          <div class="transaction income">
+            <span>Freelance Work</span>
+            <span class="transaction-amount-container">
+              <span class="transaction-amount"></span>
+              <button class="delete-btn">Delete</button>
+            </span>
+          </div>
+        </div>
+
+        
+        <canvas id="transactionChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
